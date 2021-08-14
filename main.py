@@ -8,7 +8,9 @@ from PIL import ImageFont
 
 st.title("顔認識アプリ")
 
-subscription_key = '40dde87bd94b4d96bdedd427171e6f15'
+with open('envir.json') as f:
+    envir = json.load(f)
+subscription_key = envir['SUBSC_KEY']
 assert subscription_key
 face_api_url = 'https://20210812yama.cognitiveservices.azure.com/face/v1.0/detect'
 
